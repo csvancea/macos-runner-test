@@ -14,4 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: uname -a
+    - run: pwd
+    - run: brew install autoconf automake autoconf-archive libtool make
+    - run: mkdir build && cd build
+    - run: cmake ..
+    - run: make
+    - run: ./simple_executable
     - run: vcpkg install boost:arm64-osx
