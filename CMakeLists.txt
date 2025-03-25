@@ -3,7 +3,7 @@ cmake_policy(SET CMP0167 NEW)
 
 set(CMAKE_OSX_ARCHITECTURES "arm64")
 
-set(CMAKE_TOOLCHAIN_FILE "$ENV{HOME}/vcpkg/scripts/buildsystems/vcpkg.cmake")
+set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
 message(STATUS "vcpkg toolchain: ${CMAKE_TOOLCHAIN_FILE}")
 
 project(simple_example)
