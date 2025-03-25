@@ -18,6 +18,8 @@ jobs:
     - run: ls
     - run: brew install autoconf automake autoconf-archive libtool
     - run: mkdir build && cd build
+    - run: ls
+    - run: ls ..
     - run: cmake ..
     - run: make
     - run: ./simple_executable
