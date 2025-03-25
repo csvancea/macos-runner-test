@@ -17,7 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: uname -a
-    - run: find / -name vcpkg.cmake 2>/dev/null
     - run: brew install autoconf automake autoconf-archive libtool
     - run: ls $VCPKG_ROOT
     - run: mkdir build
