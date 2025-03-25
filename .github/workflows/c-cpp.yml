@@ -15,12 +15,16 @@ jobs:
     runs-on: macos-13
 
     steps:
-    - uses: actions/checkout@v4
-    - run: uname -a
-    - run: brew install autoconf automake autoconf-archive libtool
-    - run: ls $VCPKG_ROOT
-    - run: mkdir build
-    - run: cmake -B build
-    - run: cmake --build build
-    - run: ./build/simple_executable
-    - run: vcpkg install boost:arm64-osx
+      - uses: actions/checkout@v4
+      - run: uname -a
+      - run: brew install autoconf automake autoconf-archive libtool
+      - run: vcpkg install boost:arm64-osx
+      - run: mkdir build
+      - run: cmake -B build
+      - run: cmake --build build
+      # - run: ./build/simple_executable
+      - run: file ./build/simple_executable
+      - uses: actions/upload-artifact@v4
+        with:
+          name: simple_executable
+          path: ./build/simple_executable
